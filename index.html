@@ -2,16 +2,96 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=divice-width, initial-scale=1.0">
-	<title>سایت من</title>
-	<link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه رژیم غذایی</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: auto;
+            padding-top: 20px;
+            position: relative;
+        }
+        .image-container img {
+            width: 60%;
+            border-radius: 10px;
+		    display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .text-container {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: right;
+            position: relative;
+            padding-right: 30px;
+			width: fit-content; 
+            margin-left: auto; 
+            margin-right: auto;
+        }
+        .text-container::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background-color: black;
+        }
+        .text-container p {
+            position: relative;
+        }
+        .text-container p::before {
+            content: "";
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            width: 20px;
+            height: 2px;
+            background-color: black;
+            transform: translateY(-50%);
+        }
+        .button {
+            display: block;
+            width: 60px;
+            padding: 8px;
+            background: rgba(0, 128, 0, 0.3);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0, 128, 0, 0.5);
+        }
+    </style>
 </head>
-<body dir="rtl">
-    <h1>سلام، به سایت من خوش آمدید!</h1>
-	<p>این اولین صفحه ی من است.</p>
-	<h2>این یک تیتر کوچکتر است.</h2>
-	<p>این یک متن معمولی در پاراگراف است.</p>
-	<a href="https://google.com" target="_blank" >رفتن به گوگل</a>
-	<img src="pic.jpg" alt="تصویر دختر">
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="image.jpg" alt="Healthy Food">
+        </div>
+        <div class="text-container">
+            <p>ثبت مشخصات</p>
+            <p>محاسبه‌ی شاخص توده‌ی بدنی</p>
+            <p>لیست کالری‌های مواد غذایی</p>
+            <p>خدمات پرداخت</p>
+            <p>دریافت رژیم غذایی</p>
+        </div>
+        <a href="next-page.html" class="button">ادامه</a>
+    </div>
 </body>
 </html>
