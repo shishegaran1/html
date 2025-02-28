@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت مشخصات</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+        }
+        h1 {
+            font-family: B Titr, sans-serif;
+            margin-bottom: 20px;
+        }
+        .radio-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            gap: 20px;
+            width: 50%;
+        }
+        .radio-group label {
+            font-family: XB Kayhan, sans-serif;
+            min-width: 10px;
+            text-align: center;
+        }
+        input[type="radio"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid green;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+        }
+        input[type="radio"]:checked::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: green;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            width: 80%;
+            max-width: 400px;
+            text-align: right;
+            direction: rtl;
+            align-items: flex-end;
+            padding-right: 20px;
+        }
+        .input-group label {
+            font-family: XB Kayhan, sans-serif;
+            font-weight: bold;
+            align-self: flex-start;
+            padding-right: 60px;
+        }
+        .input-group input, .input-group select {
+            width: 70%;
+            height: 30px;
+            font-size: 12px;
+            font-family: XB Kayhan, sans-serif;
+            padding: 5px;
+            border-radius: 10px;
+            align-items: center;
+            text-align: right;
+            border: 1px solid lightgray;
+            display: block;
+            margin: 0 auto;
+        }
+        .input-group select {
+            width: 73%;
+            height: 42px;
+        }
+        .floating-menu {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: green;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: box-shadow 1s ease-out;
+        }
+        .floating-menu span {
+            font-size: 25px;
+            color: white;
+            font-weight: bold;
+        }
+        .floating-menu.active {
+            box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.3);
+        }
+    </style>
+</head>
+<script>
+    window.onload = function() {
+        document.querySelector(".floating-menu").addEventListener("click", function() {
+            this.classList.add("active");
+            setTimeout(() => {
+                this.classList.remove("active");
+            }, 1000);
+        });
+    };
+</script>
+<body>
+    <h1>ثبت مشخصات</h1>
+    <div class="radio-group">
+        <label for="male">مرد</label>
+        <input type="radio" name="gender" value="male" id="male">
+        <label for="female">زن</label>
+        <input type="radio" name="gender" value="female" id="female">
+    </div>
+    <div class="input-group">
+        <label>نام</label>
+        <input type="text" placeholder="نام خود را وارد کنید">
+    </div>
+    <div class="input-group">
+        <label>نام خانوادگی</label>
+        <input type="text" placeholder="نام خانوادگی خود را وارد کنید">
+    </div>
+    <div class="input-group">
+        <label>سن</label>
+        <input type="number" placeholder="سن خود را وارد کنید">
+    </div>
+    <div class="input-group">
+        <label>وزن</label>
+        <input type="number" placeholder="وزن خود را به کیلوگرم وارد کنید">
+    </div>
+    <div class="input-group">
+        <label>قد</label>
+        <input type="number" placeholder="قد خود را به سانتی متر وارد کنید">
+    </div>
+    <div class="input-group">
+        <label>میزان فعالیت</label>
+        <select>
+            <option value="sedentary">بی تحرک</option>
+            <option value="lightly-active">کم تحرک</option>
+            <option value="moderately-active">فعالیت متوسط</option>
+            <option value="very-active">فعالیت زیاد</option>
+        </select>
+    </div>
+    <div class="floating-menu">
+        <span>+</span>
+    </div>
+</body>
+</html>
